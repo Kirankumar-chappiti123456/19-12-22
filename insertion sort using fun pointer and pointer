@@ -1,0 +1,62 @@
+#include<stdio.h>
+int fun(int arr[],int len)
+{
+    
+   
+    int i=0,j=0,temp;
+    for(i=1;i<len;i++)
+    {
+       temp=arr[i];
+       j=i-1;
+       while(j>=0 && arr[j]>temp)
+       {
+           arr[j+1]=arr[j];
+           j--;
+       }
+       arr[j+1]=temp;
+    }
+    for(i=0;i<len;i++)
+    {
+        printf("%d ",arr[i]);
+    }
+}
+int main()
+{
+    int arr[]={44,11,1,4,8,3,9,19,22};
+     int len=sizeof(arr)/sizeof(arr[0]);
+    int (*fptr)(int [],int )=fun;
+    fptr(arr,len);
+}
+
+using func pointer:
+
+#include<stdio.h>
+int fun(int *p,int len)
+{
+    
+   
+    int i=0,j=0,temp;
+    for(i=1;i<len;i++)
+    {
+       temp=p[i];
+       j=i-1;
+       while(j>=0 && p[j]>temp)
+       {
+           p[j+1]=p[j];
+           j--;
+       }
+       p[j+1]=temp;
+    }
+    for(i=0;i<len;i++)
+    {
+        printf("%d ",p[i]);
+    }
+}
+int main()
+{
+    int arr[]={44,11,1,4,8,3,9,19,22};
+    int *p=arr;
+     int len=sizeof(arr)/sizeof(arr[0]);
+    int (*fptr)(int *,int )=fun;
+    fptr(p,len);
+}
