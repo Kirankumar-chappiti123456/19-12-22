@@ -1,0 +1,7 @@
+#include <stdio.h>
+int main()
+{
+    int num=22,flip;
+    flip=num|1;
+    printf("%d",flip);
+}
