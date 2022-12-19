@@ -1,0 +1,63 @@
+#include <stdio.h>
+int fun(int *p)
+{
+    int n,m,c=0,i=0;
+    printf("enter the size of array elements:");
+    scanf("%d",&n);
+    printf("enter the searching elements:");
+    scanf("%d",&m);
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&p[i]);
+    }
+    for(i=0;i<n;i++)
+    {
+        if(p[i]==m)
+        {
+           c++;        
+        }
+    }
+    (c>0)?printf("element found"):printf("element not found");
+}
+
+int main()
+{
+    int a[20];
+    int *p=a;
+    int (*fptr)(int *)=fun;
+    fptr(p);
+}
+
+
+another way:
+
+
+#include <stdio.h>
+int fun(int a[])
+{
+    int n,m,c=0,i=0;
+    printf("enter the size of array elements:");
+    scanf("%d",&n);
+    printf("enter the searching elements:");
+    scanf("%d",&m);
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    for(i=0;i<n;i++)
+    {
+        if(m==a[i])
+        {
+           c++;    
+    
+        }
+    }
+    (c>0)?printf("element found"):printf("element not found");
+}
+
+int main()
+{
+    int *a[20];
+    int (*fptr)(int [])=fun;
+    fptr(a);
+}
