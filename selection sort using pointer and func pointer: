@@ -1,0 +1,32 @@
+#include <stdio.h>
+int fun(int *p)
+{
+    int i=0,j=0;
+    //int len=sizeof(p)/sizeof(p[0]);
+    //printf("size of array:%d\n",len);
+    for(i=0;i<7;i++)
+    {
+        for(j=i+1;j<7;j++)
+        {
+            if(p[i]>p[j])
+            {
+                int temp=p[i];
+                p[i]=p[j];
+                p[j]=temp;
+            }
+        }
+    }
+    for(i=0;i<7;i++)
+    {
+        printf("%d ",p[i]);
+    }
+}
+
+int main()
+{
+    int a[]={100,20,5,25,49,19,2};
+    int *p=a;
+    int (*fptr)(int *)=fun;
+    fptr(p);
+}
+
