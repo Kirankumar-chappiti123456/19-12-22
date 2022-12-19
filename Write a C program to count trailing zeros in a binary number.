@@ -25,3 +25,26 @@ int main()
     int (*fptr)(int,int)=fun;
     fptr(num,c);
 }
+
+
+using 32 bit :
+
+#include<stdio.h>
+#define N sizeof(int)*8
+int main()
+{
+    int num=8,c=0,i=0;
+    
+   for(i=0;i<N;i++)
+    {
+    if((num>>i)&1)
+    {
+        break;
+    }
+    else
+    {
+        c++;
+    }
+    }
+    printf("%d\n",c);
+}
