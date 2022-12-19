@@ -1,0 +1,27 @@
+#include <stdio.h>
+int fun(int num,int c)
+{
+
+    while(num!=0)
+    {
+        if(num&1==1)
+        {
+            break;
+            
+        }
+        else
+        {
+            num=num>>1;
+            c++;
+        }
+    }
+    printf("trailing zeros: %d",c);
+}
+int main()
+{
+    int num,c=0;
+    printf("enter the number:");
+    scanf("%d",&num);
+    int (*fptr)(int,int)=fun;
+    fptr(num,c);
+}
