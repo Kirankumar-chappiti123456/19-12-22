@@ -2,6 +2,6 @@
 int main()
 {
     int num=22,flip;
-    flip=num|1;
+    flip=-~num; // for negative i will come for ~ negosation 
     printf("%d",flip);
 }
